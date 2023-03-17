@@ -5,12 +5,8 @@ defmodule Factor do
 
   def of(_), do: []
 
-  defp ofp(n, divisor, factors) when rem(n, divisor) != 0 and n > divisor do
-    ofp(n, divisor + 1, factors)
-  end
-
-  defp ofp(n, divisor, factors) when rem(n, divisor) != 0 and n <= divisor do
-    factors
+  defp ofp(n, divisor, factors) when rem(n, divisor) != 0 do
+    (n > divisor && ofp(n, divisor + 1, factors)) || factors
   end
 
   defp ofp(n, divisor, factors) when rem(n, divisor) == 0 do
