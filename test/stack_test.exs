@@ -88,4 +88,9 @@ defmodule StackTest do
     {status, _, _} = Stack.pop(stack)
     assert status == :error
   end
+
+  # https://stackoverflow.com/questions/1583363/how-to-unit-test-private-methods-in-bdd-tdd
+  # test "get last_element" do
+  #   assert Stack.last_element([1, 2, 3]) == 3
+  # end
 end

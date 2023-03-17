@@ -14,8 +14,10 @@ defmodule Queue do
 
   defp last_element([x]), do: x
   defp last_element([_head | tail]), do: last_element(tail)
+  # defp last_element(list), do: list |> Enum.reverse() |> hd()
 
   defp except_last([]), do: []
   defp except_last([_last]), do: []
   defp except_last([head | tail]), do: [head | except_last(tail)]
+  # defp except_last(list), do: list > Enum.reverse() |> tl() |> Enum.reverse()
 end
